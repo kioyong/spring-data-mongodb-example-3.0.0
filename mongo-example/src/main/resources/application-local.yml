@@ -3,3 +3,12 @@ spring:
     mongodb:
       uri: mongodb://localhost:27017
       database: example
+logging:
+  level:
+    org:
+      springframework:
+        data:
+          mongodb:
+            core:
+              mapping:
+                event: debug

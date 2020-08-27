@@ -1,4 +1,4 @@
-package com.example.mongo;
+package com.example.mongo.person;
 
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +17,11 @@ public class PersonController {
     @GetMapping
     public Collection<Person> findAllPatron() {
         return personRepository.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public Person findOne(@PathVariable String id) {
+        return personRepository.findById(id).get();
     }
 
     @PostMapping
